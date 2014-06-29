@@ -99,6 +99,13 @@ ALTER TABLE ONLY players
 
 
 --
+-- Name: index_players_on_game_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_players_on_game_id ON players USING btree (game_id);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -114,3 +121,5 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20140628233949');
 
 INSERT INTO schema_migrations (version) VALUES ('20140629015222');
+
+INSERT INTO schema_migrations (version) VALUES ('20140629052631');

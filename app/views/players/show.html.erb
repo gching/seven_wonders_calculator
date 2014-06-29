@@ -1,0 +1,10 @@
+<h3>Player <%=@player.name%></h3>
+<h4><%=link_to "Match #{@player.game_id}", match_path(@player.game_id) %></h4>
+<h5><%= "Score : #{@player.score}" %></h5>
+
+<% %w[victories coins wonders blues yellows purples tablets compasses gears leaders blacks].each do |attr| %>
+  <p><strong><%= attr.capitalize%>:</strong> <%=@player.send(attr)%></p>
+<% end %>
+
+<%= link_to 'Edit this player', edit_player_path(@player) %> |
+<%= link_to 'Go back to all the matches', root_path %>

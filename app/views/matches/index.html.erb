@@ -1,0 +1,9 @@
+<ol id="matches">
+  <% @matches.each do |game_id| %>
+    <li id="<%=game_id%>"><%= link_to "Match #{game_id}", match_path(game_id) %></li>
+  <% end %>
+
+</ol>
+
+
+<h3><%= link_to("New Player", new_player_path)%></h3>

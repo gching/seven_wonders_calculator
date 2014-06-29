@@ -1,0 +1,7 @@
+<h2> Match <%= @game_id %> </h2>
+
+<ol id="players">
+  <% @players.each do |player| %>
+    <li id="<%=player.id%>"><%= link_to("#{player.name} - #{player.score}", player_path(player.id) )%></li>
+  <% end %>
+</ol>
