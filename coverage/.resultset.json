@@ -1,7 +1,45 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/gching/Projects/seven_wonders_calculator/app/models/player.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        11,
+        11,
+        null,
+        11,
+        197,
+        44,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        197,
+        null,
+        null,
+        null,
+        null
+      ]
     },
-    "timestamp": 1403994703
+    "timestamp": 1404006529
   }
 }

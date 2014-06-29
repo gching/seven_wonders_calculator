@@ -49,6 +49,7 @@ group :development, :test do
   gem 'zeus'
   gem 'capybara', '~> 2.1.0'
   gem 'database_cleaner'
+  gem 'faker'
 end
 
 group :test do
