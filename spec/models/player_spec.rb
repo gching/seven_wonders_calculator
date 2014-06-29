@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Player do
   let(:first_player) {build(:player)}
-
+  let(:player) {create(:player)}
 
   it "has a valid factory to build a player" do
     expect(first_player).to be_valid
@@ -28,11 +28,11 @@ describe Player do
 
   it "should be able to calculate total score of player" do
     ## Calculate the score here!
-    total_score = first_player.victories + first_player.coins/3 +first_player.blues + first_player.yellows + first_player.purples + first_player.leaders + first_player.blacks
+    total_score = player.victories + player.coins/3 + player.blues + player.yellows + player.purples + player.leaders + player.blacks
 
     ## Greens
-    greens = [first_player.tablets, first_player.compasses, first_player.gears]
+    greens = [player.tablets, player.compasses, player.gears]
     total_score += (greens.min*7) + greens[0]**2 + greens[1]**2 + greens[2]**2
-
+    expect(player.score).to eql(total_score)
   end
 end

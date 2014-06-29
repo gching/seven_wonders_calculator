@@ -15,16 +15,24 @@ class Player < ActiveRecord::Base
   ## Validates that game_id and name exists
   validates_presence_of :game_id, :name, :points
 
-  ## Before saving, calculate total_score.
-  before_save :gen_total_score
+  ## Before saving, calculate score
+  before_save :gen_score
 
 
 private
-  ## Helps generate the total score of this player in this match
-  def gen_total_score
 
+  ## Helps generate the total score of this player in this match
+  def gen_score
+    ## Calculate the score here!
+
+    total_score = victories + coins/3 + blues + yellows + purples + leaders + blacks
+    ## Greens
+    greens = [tablets, compasses, gears]
+    total_score += (greens.min*7) + greens[0]**2 + greens[1]**2 + greens[2]**2
+    self.score = total_score
   end
 
+  ## Checks if in the current string is a string of an integer.
   def is_integer(string)
     /\A[+-]?\d+\Z/ === string
   end

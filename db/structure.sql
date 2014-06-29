@@ -50,7 +50,8 @@ CREATE TABLE players (
     id integer NOT NULL,
     game_id integer,
     name character varying(255),
-    points hstore
+    points hstore,
+    score integer
 );
 
 
@@ -111,3 +112,5 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES ('20140628233949');
+
+INSERT INTO schema_migrations (version) VALUES ('20140629015222');
