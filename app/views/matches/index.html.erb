@@ -1,6 +1,6 @@
 <ol id="matches">
-  <% @matches.each do |game_id| %>
-    <li id="<%=game_id%>"><%= link_to "Match #{game_id}", match_path(game_id) %></li>
+  <% @matches.each do |game| %>
+    <li id="<%=game[0]%>"><%= link_to "Match #{game[0]}", match_path(game[0]) %> on <%= game[1].to_formatted_s(:long) %></li>
   <% end %>
 
 </ol>

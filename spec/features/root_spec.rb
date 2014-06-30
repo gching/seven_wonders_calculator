@@ -22,7 +22,7 @@ describe "root page" do
 end
 
 
-describe "match / player page" do
+describe "match" do
   before :each do
     @player1 = create(:player, game_id: 1, victories: 1000)
     @player2 = create(:player, game_id: 1)
@@ -33,6 +33,10 @@ describe "match / player page" do
   it "should have the correct ranking" do
     expect(page).to have_selector("ol#players li:nth-child(1)", text: "#{@player1.name} - #{@player1.score}")
     expect(page).to have_selector("ol#players li:nth-child(2)", text: "#{@player2.name} - #{@player2.score}")
+  end
+
+  it "should have link to go back to all the matches" do
+    expect(page).to have_link("Go back")
   end
 
 end
